@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>guest@silmi: ~</title>
+    <link rel="icon" href="/assets/flask_big_blue.png" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <section class="terminal">
+      <p>→ Welcome to Global Chat — Type <span>/user <-name-> </span> to create the temporary user. Or <span>/help</span> for a list of supported commands.</p>
+    </section>
+
+    <div class="bash-command" id="bash-command">
+      <label for="command">&rarr; <label>
+      <input id="command" type="text" autoComplete="off" autofocus/>
+    </div>
+
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script src="/scripts/socket.controller.js"></script>
+    <script src="/scripts/events.controller.js"></script>
+  </body>
+</html>
