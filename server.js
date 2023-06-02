@@ -3,13 +3,16 @@ require("dotenv").config();
 const express = require("express");
 const serve_static = require("serve-static");
 const path = require("path");
+const cors = require("cors");
 
 const PORT = process.env.PORT || 3000;
 const public_directory = path.join(__dirname, "./public");
 const app = express();
 
 app.use(express.static(public_directory));
-
+app.use(cors({
+  
+}))
 app.use(serve_static(public_directory, { index: ["index.html", "index.htm"] }));
 
 const http = require("http");

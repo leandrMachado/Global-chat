@@ -1,5 +1,5 @@
 const input = document.querySelector("input");
-const socketConnection = io('http://localhost:3000');
+const socketConnection = io('http://89.152.186.173/:3000');
 
 const commands = {
   "/user": (username) => defineUser(username),
