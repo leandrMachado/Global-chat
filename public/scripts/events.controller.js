@@ -9,9 +9,10 @@ const create_user = async (username) => {
     color: `#${Math.floor(Math.random() * 16777215).toString(16)}`,
   };
 
+  socket.emit("user_connected", user);
+
   localStorage.setItem("user", JSON.stringify(user));
   clearCommandPrompt();
-  await typing(`→ <span style="color: #5788ff;"> ${username} connected. </span>`);
 };
 
 const clearCommandPrompt = () => {
@@ -29,5 +30,11 @@ const typing = (message, user = {}) => {
 
   document.querySelector(".terminal").appendChild(commandExit);
 };
+
+const typingUserConnected = (user) => {
+  const commandExit = document.createElement("p");
+  commandExit.innerHTML = `<span style="color: ${user.color};"> ${user.username} connected. </span>`;
+  document.querySelector(".terminal").appendChild(commandExit);
+}
 
 if (performance.navigation.type === 1) localStorage.removeItem("user");

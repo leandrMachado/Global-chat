@@ -31,3 +31,7 @@ const sendMessageToGlobal = (message) => {
 socket.on("global_chat", (data) => {
     typing(data.message, data.user)
 })
+
+socket.on("user_connected", (data) => {
+    typingUserConnected(data);
+})

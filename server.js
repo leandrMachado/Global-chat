@@ -21,6 +21,10 @@ connection.on("connection", socket => {
     socket.on("global_chat", data => {
         connection.emit("global_chat", data);
     })
+
+    socket.on("user_connected", data => {
+        connection.emit("user_connected", data);
+    })
 })
 
 server.listen(PORT, () => {
